@@ -33,5 +33,11 @@ namespace MetanitMvc5.Controllers
         {
             return new HtmlResult("<h2>Привет мир!</h2>");
         }
+
+        public ActionResult ImageResult()
+        {
+            string path = "../Images/panda.png";
+            return new ImageResult(path);
+        }
     }
 }
