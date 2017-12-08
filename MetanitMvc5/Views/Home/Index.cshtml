@@ -16,3 +16,10 @@
 
 <p>Свой результат действия: @Html.ActionLink("Custom ActionResult", "CustomActionResult"), 
     @Html.ActionLink("ImageResult", "ImageResult")</p>
+
+<p>Статус 404: @Html.ActionLink("StatusCode404", "StatusCode404", new { age = 18 })</p>
+<p>Не найдено: @Html.ActionLink("NotFound", "NotFound", new { age = 18 })</p>
+<p>Нет доступа: @Html.ActionLink("Unauthorized", "Unauthorized", new { age = 18 })</p>
+
+<p>Файл (скачается при нажатии): @Html.ActionLink("GetFile", "GetFile"), @Html.ActionLink("GetBytes", "GetBytes"), 
+    @Html.ActionLink("GetStream", "GetStream")</p>
