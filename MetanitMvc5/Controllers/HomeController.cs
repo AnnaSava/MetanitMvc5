@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetanitMvc5.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,6 +27,11 @@ namespace MetanitMvc5.Controllers
             int b = Int32.Parse(Request.Params["b"]);
             int s = a * b;
             return "<h2>Площадь прямоугольника со сторонами " + a + " и " + b + " равна " + s + "</h2>";
+        }
+
+        public ActionResult CustomActionResult()
+        {
+            return new HtmlResult("<h2>Привет мир!</h2>");
         }
     }
 }
