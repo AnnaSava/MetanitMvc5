@@ -115,13 +115,36 @@ namespace MetanitMvc5.Controllers
 
             return "<p>Browser: " + browser + "</p><p>User-Agent: " + user_agent + "</p><p>Url запроса: " + url +
                 "</p><p>Реферер: " + referrer + "</p><p>IP-адрес: " + ip + "</p>" +
-                "<p>User is admin " + IsAdmin + "</p><p>User is authenticated " + IsAuth + "</p>Login " 
+                "<p>User is admin " + IsAdmin + "</p><p>User is authenticated " + IsAuth + "</p>Login "
                 + login + "</p>";
         }
 
         public void ContextResponse()
         {
             HttpContext.Response.Write("<h1>Hello World</h1><p>I'm written directly to response</p>");
+        }
+
+        public RedirectToRouteResult SetCookie(int q)
+        {
+            HttpContext.Response.Cookies["quantity"].Value = q.ToString();
+            return RedirectToAction("GetCookie");
+        }
+
+        public string GetCookie()
+        {
+            return "Quantity from cookies = " + HttpContext.Request.Cookies["quantity"].Value;
+        }
+
+        public RedirectToRouteResult SetNameInSession()
+        {
+            Session["name"] = "Anna";
+            return RedirectToAction("GetNameFromSession");
+        }
+
+        public string GetNameFromSession()
+        {
+            var val = Session["name"];
+            return "Name from session = "+ val.ToString();
         }
     }
 }
