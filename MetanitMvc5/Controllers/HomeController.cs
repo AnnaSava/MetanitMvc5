@@ -68,6 +68,7 @@ namespace MetanitMvc5.Controllers
             return View();
         }
 
+        // Отправка файла
         public FileResult GetFile()
         {
             // Путь к файлу
@@ -98,6 +99,29 @@ namespace MetanitMvc5.Controllers
             string file_type = "image/png";
             string file_name = "panda.png";
             return File(fs, file_type, file_name);
+        }
+
+        public string ContextRequest()
+        {
+            string browser = HttpContext.Request.Browser.Browser;
+            string user_agent = HttpContext.Request.UserAgent;
+            string url = HttpContext.Request.RawUrl;
+            string ip = HttpContext.Request.UserHostAddress;
+            string referrer = HttpContext.Request.UrlReferrer == null ? "" : HttpContext.Request.UrlReferrer.AbsoluteUri;
+
+            bool IsAdmin = HttpContext.User.IsInRole("admin"); // определяем, принадлежит ли пользователь к администраторам
+            bool IsAuth = HttpContext.User.Identity.IsAuthenticated; // аутентифицирован ли пользователь
+            string login = HttpContext.User.Identity.Name; // логин авторизованного пользователя
+
+            return "<p>Browser: " + browser + "</p><p>User-Agent: " + user_agent + "</p><p>Url запроса: " + url +
+                "</p><p>Реферер: " + referrer + "</p><p>IP-адрес: " + ip + "</p>" +
+                "<p>User is admin " + IsAdmin + "</p><p>User is authenticated " + IsAuth + "</p>Login " 
+                + login + "</p>";
+        }
+
+        public void ContextResponse()
+        {
+            HttpContext.Response.Write("<h1>Hello World</h1><p>I'm written directly to response</p>");
         }
     }
 }
