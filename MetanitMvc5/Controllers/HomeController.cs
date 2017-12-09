@@ -1,4 +1,6 @@
-﻿using MetanitMvc5.Models;
+﻿using MetanitMvc5.Annotations;
+using MetanitMvc5.Filters;
+using MetanitMvc5.Models;
 using MetanitMvc5.Util;
 using System;
 using System.Collections.Generic;
@@ -228,6 +230,34 @@ namespace MetanitMvc5.Controllers
                 return RedirectToAction("Index");
             }
             return View(model);
+        }
+
+        [IndexException]
+        public ActionResult IndexException()
+        {
+            int[] mas = new int[2];
+            mas[6] = 4;
+            return View();
+        }
+
+        [HandleError(ExceptionType = typeof(System.IndexOutOfRangeException), View = "ExceptionFound")]
+        public ActionResult HandleError()
+        {
+            int[] mas = new int[2];
+            mas[6] = 4;
+            return View();
+        }
+
+        [CustomAction]
+        public ActionResult CustomAction()
+        {
+            return View();
+        }
+
+        [CustomResult]
+        public ActionResult CustomResult()
+        {
+            return View();
         }
     }
 }

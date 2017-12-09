@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ExceptionFound.html" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\panda.png" />
@@ -106,13 +107,16 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Annotations\CustomActionAttribute.cs" />
     <Compile Include="Annotations\CustomAuthorsAttribute.cs" />
+    <Compile Include="Annotations\CustomResultAttribute.cs" />
     <Compile Include="Annotations\CustomValidatorProvider.cs" />
     <Compile Include="Annotations\NotAllowedAttribute.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CustomController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filters\IndexException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -141,6 +145,9 @@
     <Content Include="Views\Home\ModelValidation.cshtml" />
     <Content Include="Views\Home\SelfValidation.cshtml" />
     <Content Include="Views\Home\ValidatorProvider.cshtml" />
+    <Content Include="Views\Shared\ExceptionFound.cshtml" />
+    <Content Include="Views\Home\CustomAction.cshtml" />
+    <Content Include="Views\Home\CustomResult.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
