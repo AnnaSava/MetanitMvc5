@@ -43,11 +43,16 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -107,15 +112,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Annotations\CacheAttribute.cs" />
+    <Compile Include="Annotations\CompressAttribute.cs" />
     <Compile Include="Annotations\CustomActionAttribute.cs" />
     <Compile Include="Annotations\CustomAuthorsAttribute.cs" />
     <Compile Include="Annotations\CustomResultAttribute.cs" />
     <Compile Include="Annotations\CustomValidatorProvider.cs" />
+    <Compile Include="Annotations\LogAttribute.cs" />
     <Compile Include="Annotations\NotAllowedAttribute.cs" />
+    <Compile Include="Annotations\WhitespaceAttribute.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CustomController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Db\LogContext.cs" />
     <Compile Include="Filters\IndexException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -148,6 +158,10 @@
     <Content Include="Views\Shared\ExceptionFound.cshtml" />
     <Content Include="Views\Home\CustomAction.cshtml" />
     <Content Include="Views\Home\CustomResult.cshtml" />
+    <Content Include="Views\Home\Cache.cshtml" />
+    <Content Include="Views\Home\Compress.cshtml" />
+    <Content Include="Views\Home\Whitespace.cshtml" />
+    <Content Include="Views\Home\Log.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

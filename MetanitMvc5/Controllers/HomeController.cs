@@ -147,7 +147,7 @@ namespace MetanitMvc5.Controllers
         public string GetNameFromSession()
         {
             var val = Session["name"];
-            return "Name from session = "+ val.ToString();
+            return "Name from session = " + val.ToString();
         }
 
         public ActionResult CustomValidation()
@@ -256,6 +256,30 @@ namespace MetanitMvc5.Controllers
 
         [CustomResult]
         public ActionResult CustomResult()
+        {
+            return View();
+        }
+
+        [Cache(Duration = 400)]
+        public ActionResult Cache()
+        {
+            return View();
+        }
+
+        [Compress]
+        public ActionResult Compress()
+        {
+            return View();
+        }
+
+        [Whitespace]
+        public ActionResult Whitespace()
+        {
+            return View();
+        }
+
+        [Log]
+        public ActionResult Log()
         {
             return View();
         }
