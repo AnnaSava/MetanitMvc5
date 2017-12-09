@@ -138,8 +138,11 @@
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookBind.cs" />
     <Compile Include="Models\ClearBook.cs" />
+    <Compile Include="Models\BookForBinder.cs" />
     <Compile Include="Models\HiddenInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\BookModelBinder.cs" />
+    <Compile Include="Util\BrowserValueProvider.cs" />
     <Compile Include="Util\HtmlResult.cs" />
     <Compile Include="Util\ImageResult.cs" />
   </ItemGroup>
@@ -169,6 +172,7 @@
     <Content Include="Views\Shared\ArgumentException.cshtml" />
     <Content Include="Views\Home\BindBook.cshtml" />
     <Content Include="Views\Home\BindBookModel.cshtml" />
+    <Content Include="Views\Home\ModelBinder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

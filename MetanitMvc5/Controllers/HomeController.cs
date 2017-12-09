@@ -331,5 +331,15 @@ namespace MetanitMvc5.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+        public string BrowserInfo(string browser)
+        {
+            return browser;
+        }
+
+        public ActionResult ModelBinder(BookForBinder b)
+        {
+            return View(b);
+        }
     }
 }

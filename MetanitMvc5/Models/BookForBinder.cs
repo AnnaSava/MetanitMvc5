@@ -1,20 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MetanitMvc5.Util;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 namespace MetanitMvc5.Models
 {
-    // Модель с указанием, какие поля биндить
-    [Bind(Exclude = "Year")]
-    public class BookBind
+    // Модель для ModelBinder
+    [ModelBinder(typeof(BookModelBinder))] // Указать привязчик также можно в Global.asax
+    public class BookForBinder
     {
-        [ScaffoldColumn(false)]
+        [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Поле должно быть установлено")]
         [Display(Name = "Название")]
         public string Name { get; set; }
 
-        [Required]
         [Display(Name = "Автор")]
         public string Author { get; set; }
 
