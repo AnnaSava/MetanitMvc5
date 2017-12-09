@@ -1,4 +1,5 @@
-﻿using MetanitMvc5.Util;
+﻿using MetanitMvc5.Models;
+using MetanitMvc5.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -145,6 +146,88 @@ namespace MetanitMvc5.Controllers
         {
             var val = Session["name"];
             return "Name from session = "+ val.ToString();
+        }
+
+        public ActionResult CustomValidation()
+        {
+            var model = new BookCustom()
+            {
+                Name = "Преступление и наказание",
+                Author = "Ф. Достоевский",
+                Year = 1866
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult CustomValidation(BookCustom model)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+
+        public ActionResult ModelValidation()
+        {
+            var model = new BookNotAllowed()
+            {
+                Name = "Преступление и наказание",
+                Author = "Ф. Достоевский",
+                Year = 1866
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult ModelValidation(BookNotAllowed model)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+
+        public ActionResult SelfValidation()
+        {
+            var model = new BookValidatable()
+            {
+                Year = 1699
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult SelfValidation(BookValidatable model)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+
+        public ActionResult ValidatorProvider()
+        {
+            var model = new Book()
+            {
+                Name = "Преступление и наказание",
+                Author = "Ф. Достоевский",
+                Year = 1866
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult ValidatorProvider(Book model)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(model);
         }
     }
 }

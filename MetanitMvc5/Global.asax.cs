@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetanitMvc5.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,8 @@ namespace MetanitMvc5
     {
         protected void Application_Start()
         {
+            ModelValidatorProviders.Providers.Add(new CustomValidatorProvider());
+
             AreaRegistration.RegisterAllAreas();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
