@@ -18,6 +18,7 @@ namespace MetanitMvc5
             AreaRegistration.RegisterAllAreas();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
         }
     }
 }

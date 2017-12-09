@@ -6,13 +6,13 @@ using System.Web.Mvc;
 
 namespace MetanitMvc5.Filters
 {
-    public class IndexException : FilterAttribute, IExceptionFilter
+    public class ArgumentExceptionHandler : FilterAttribute, IExceptionFilter
     {
         public void OnException(ExceptionContext exceptionContext)
         {
-            if (!exceptionContext.ExceptionHandled && exceptionContext.Exception is IndexOutOfRangeException)
+            if (!exceptionContext.ExceptionHandled && exceptionContext.Exception is ArgumentException)
             {
-                exceptionContext.Result = new RedirectResult("/Content/ExceptionFound.html");
+                exceptionContext.Result = new ViewResult() { ViewName = "ArgumentException" };
                 exceptionContext.ExceptionHandled = true;
             }
         }

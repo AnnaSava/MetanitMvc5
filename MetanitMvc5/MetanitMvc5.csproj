@@ -112,6 +112,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Filters\ArgumentExceptionHandler.cs" />
     <Compile Include="Filters\CacheAttribute.cs" />
     <Compile Include="Filters\CompressAttribute.cs" />
     <Compile Include="Filters\CustomActionAttribute.cs" />
@@ -162,6 +164,7 @@
     <Content Include="Views\Home\Compress.cshtml" />
     <Content Include="Views\Home\Whitespace.cshtml" />
     <Content Include="Views\Home\Log.cshtml" />
+    <Content Include="Views\Shared\ArgumentException.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

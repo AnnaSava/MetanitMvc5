@@ -240,6 +240,7 @@ namespace MetanitMvc5.Controllers
             return View();
         }
 
+        // Чтобы заработало, нужно раскомментить <customErrors mode="On" /> в Web.config
         [HandleError(ExceptionType = typeof(System.IndexOutOfRangeException), View = "ExceptionFound")]
         public ActionResult HandleError()
         {
@@ -280,6 +281,11 @@ namespace MetanitMvc5.Controllers
 
         [Log]
         public ActionResult Log()
+        {
+            return View();
+        }
+
+        public ActionResult Argument(int arg)
         {
             return View();
         }
