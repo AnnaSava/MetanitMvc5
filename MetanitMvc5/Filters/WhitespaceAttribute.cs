@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MetanitMvc5.Annotations
+namespace MetanitMvc5.Filters
 {
     public class WhitespaceAttribute : ActionFilterAttribute
     {

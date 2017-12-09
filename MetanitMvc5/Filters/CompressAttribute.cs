@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MetanitMvc5.Annotations
+namespace MetanitMvc5.Filters
 {
     public class CompressAttribute : ActionFilterAttribute
     {

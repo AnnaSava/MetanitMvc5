@@ -112,15 +112,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Annotations\CacheAttribute.cs" />
-    <Compile Include="Annotations\CompressAttribute.cs" />
-    <Compile Include="Annotations\CustomActionAttribute.cs" />
+    <Compile Include="Filters\CacheAttribute.cs" />
+    <Compile Include="Filters\CompressAttribute.cs" />
+    <Compile Include="Filters\CustomActionAttribute.cs" />
     <Compile Include="Annotations\CustomAuthorsAttribute.cs" />
-    <Compile Include="Annotations\CustomResultAttribute.cs" />
+    <Compile Include="Filters\CustomResultAttribute.cs" />
     <Compile Include="Annotations\CustomValidatorProvider.cs" />
-    <Compile Include="Annotations\LogAttribute.cs" />
+    <Compile Include="Filters\LogAttribute.cs" />
     <Compile Include="Annotations\NotAllowedAttribute.cs" />
-    <Compile Include="Annotations\WhitespaceAttribute.cs" />
+    <Compile Include="Filters\WhitespaceAttribute.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CustomController.cs" />
