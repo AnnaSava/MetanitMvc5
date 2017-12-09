@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MetanitMvc5.Models
 {
+    // Кастомные атрибуты валидации
     public class BookCustom
     {
         [HiddenInput(DisplayValue = false)]

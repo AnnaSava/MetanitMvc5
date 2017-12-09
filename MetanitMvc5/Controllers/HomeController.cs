@@ -289,5 +289,47 @@ namespace MetanitMvc5.Controllers
         {
             return View();
         }
+
+        public ActionResult BindInclude([Bind(Include = "Name, Author")] ClearBook b)
+        {
+            return View("BindBook", b);
+        }
+
+        public ActionResult BindExclude([Bind(Exclude = "Year")] ClearBook b)
+        {
+            return View("BindBook", b);
+        }
+
+        public ActionResult BindModel(BookBind b)
+        {
+            return View("BindBookModel", b);
+        }
+
+        public ActionResult UpdateModel()
+        {
+            var book = new ClearBook();
+            try
+            {
+                UpdateModel(book);
+                return View("BindBook", book);
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index");
+            }
+        }
+
+        public ActionResult TryUpdateModel()
+        {
+            var book = new ClearBook();
+            if (TryUpdateModel(book))
+            {
+                return View("BindBook", book);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
     }
 }

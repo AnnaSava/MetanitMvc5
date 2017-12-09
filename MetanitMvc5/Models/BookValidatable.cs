@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MetanitMvc5.Models
 {
+    // Самовалидация
     public class BookValidatable : IValidatableObject
     {
         [HiddenInput(DisplayValue = false)]

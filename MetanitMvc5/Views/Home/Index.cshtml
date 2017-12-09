@@ -52,3 +52,17 @@
 <p>Фильтр логирования: @Html.ActionLink("Log", "Log")</p>
 
 <p>Глобальный фильтр: @Html.ActionLink("Argument", "Argument", new { arg = "notint" })</p>
+
+<h3>Глава 9. Привязка модели</h3>
+
+<p>Привязка заданных полей: @Html.ActionLink("BindInclude", "BindInclude", 
+    new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })</p>
+<p>Привязка полей, кроме заданных: @Html.ActionLink("BindExclude", "BindExclude", 
+    new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })</p>
+<p>Привязка на уровне модели без заданных полей: @Html.ActionLink("BindModel", "BindModel", 
+    new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })</p>
+<p>Явная привязка: @Html.ActionLink("UpdateModel", "UpdateModel", 
+    new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 }),
+    @Html.ActionLink("TryUpdateModel", "TryUpdateModel", 
+    new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })
+</p>

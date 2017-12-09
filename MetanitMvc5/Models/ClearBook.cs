@@ -3,8 +3,8 @@ using System.Web.Mvc;
 
 namespace MetanitMvc5.Models
 {
-    // Валидация через провайдер
-    public class Book
+    // Класс без валидации
+    public class ClearBook
     {
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MetanitMvc5.Models
 {
+    // Валидация на уровне модели
     [NotAllowedAttribute(ErrorMessage = "Недопустимая книга")]
     public class BookNotAllowed
     {
