@@ -4,70 +4,94 @@
 
 <h2>Index</h2>
 
+
+
 <p>Примеры с сайта metanit.com</p>
 
 <p><a href="https://metanit.com/sharp/mvc5/">Руководство по ASP.NET MVC 5</a></p>
 
-<h3>Глава 3. Контроллеры</h3>
-<p>Пример реализации IController: <a href="/Custom">CustomController</a></p>
+<div class="row">
+    <div class="col-lg-6">
+        <h3>Глава 3. Контроллеры</h3>
+        <p>Пример реализации IController: <a href="/Custom">CustomController</a></p>
 
-<p>Передача параметров: @Html.ActionLink("Площадь треугольника", "TriangleSquare", new { a = 10, h = 7 })</p>
-<p>Получение параметров из запроса: @Html.ActionLink("Площадь прямоугольника", "Square", new { a = 5, b = 4 })</p>
+        <p>Передача параметров: @Html.ActionLink("Площадь треугольника", "TriangleSquare", new { a = 10, h = 7 })</p>
+        <p>Получение параметров из запроса: @Html.ActionLink("Площадь прямоугольника", "Square", new { a = 5, b = 4 })</p>
 
-<p>Свой результат действия: @Html.ActionLink("Custom ActionResult", "CustomActionResult"), 
-    @Html.ActionLink("ImageResult", "ImageResult")</p>
+        <p>
+            Свой результат действия: @Html.ActionLink("Custom ActionResult", "CustomActionResult"),
+            @Html.ActionLink("ImageResult", "ImageResult")
+        </p>
 
-<p>Статус 404: @Html.ActionLink("StatusCode404", "StatusCode404", new { age = 18 })</p>
-<p>Не найдено: @Html.ActionLink("NotFound", "NotFound", new { age = 18 })</p>
-<p>Нет доступа: @Html.ActionLink("Unauthorized", "Unauthorized", new { age = 18 })</p>
+        <p>Статус 404: @Html.ActionLink("StatusCode404", "StatusCode404", new { age = 18 })</p>
+        <p>Не найдено: @Html.ActionLink("NotFound", "NotFound", new { age = 18 })</p>
+        <p>Нет доступа: @Html.ActionLink("Unauthorized", "Unauthorized", new { age = 18 })</p>
 
-<p>Файл (скачается при нажатии): @Html.ActionLink("GetFile", "GetFile"), @Html.ActionLink("GetBytes", "GetBytes"), 
-    @Html.ActionLink("GetStream", "GetStream")</p>
+        <p>
+            Файл (скачается при нажатии): @Html.ActionLink("GetFile", "GetFile"), @Html.ActionLink("GetBytes", "GetBytes"),
+            @Html.ActionLink("GetStream", "GetStream")
+        </p>
 
-<p>Получение данных из контекста запроса: @Html.ActionLink("ContextRequest", "ContextRequest")</p>
-<p>Запись данных в контекст запроса: @Html.ActionLink("ContextResponse", "ContextResponse")</p>
+        <p>Получение данных из контекста запроса: @Html.ActionLink("ContextRequest", "ContextRequest")</p>
+        <p>Запись данных в контекст запроса: @Html.ActionLink("ContextResponse", "ContextResponse")</p>
 
-<p>Установка, а затем получение кукис: @Html.ActionLink("SetCookie", "SetCookie", new { q = 8 })</p>
+        <p>Установка, а затем получение кукис: @Html.ActionLink("SetCookie", "SetCookie", new { q = 8 })</p>
 
-<p>Запись и чтение из сессии: @Html.ActionLink("SetNameInSession", "SetNameInSession", new { q = 8 })</p>
+        <p>Запись и чтение из сессии: @Html.ActionLink("SetNameInSession", "SetNameInSession", new { q = 8 })</p>
 
-<h3>Глава 7. Метаданные и валидация модели</h3>
+        <h3>Глава 7. Метаданные и валидация модели</h3>
 
-<p>Реализация атрибута валидации: @Html.ActionLink("CustomValidation", "CustomValidation")</p>
-<p>Валидация на уровне модели: @Html.ActionLink("ModelValidation", "ModelValidation")</p>
-<p>Самовалидация модели: @Html.ActionLink("SelfValidation", "SelfValidation")</p>
-<p>Реализация провайдера валидации: @Html.ActionLink("ValidatorProvider", "ValidatorProvider")</p>
+        <p>Реализация атрибута валидации: @Html.ActionLink("CustomValidation", "CustomValidation")</p>
+        <p>Валидация на уровне модели: @Html.ActionLink("ModelValidation", "ModelValidation")</p>
+        <p>Самовалидация модели: @Html.ActionLink("SelfValidation", "SelfValidation")</p>
+        <p>Реализация провайдера валидации: @Html.ActionLink("ValidatorProvider", "ValidatorProvider")</p>
+    </div>
 
-<h3>Глава 8. Фильтры</h3>
+    <div class="col-lg-6">
+        <h3>Глава 8. Фильтры</h3>
 
-<p>Реализация фильтра исключения: @Html.ActionLink("IndexException", "IndexException")</p>
-<p>Обработчик исключений: @Html.ActionLink("HandleError", "HandleError")</p>
+        <p>Реализация фильтра исключения: @Html.ActionLink("IndexException", "IndexException")</p>
+        <p>Обработчик исключений: @Html.ActionLink("HandleError", "HandleError")</p>
 
-<p>Фильтр действий: @Html.ActionLink("CustomAction", "CustomAction")</p>
-<p>Фильтр результатов: @Html.ActionLink("CustomResult", "CustomResult")</p>
+        <p>Фильтр действий: @Html.ActionLink("CustomAction", "CustomAction")</p>
+        <p>Фильтр результатов: @Html.ActionLink("CustomResult", "CustomResult")</p>
 
-<p>Фильтр кэширования: @Html.ActionLink("Cache", "Cache")</p>
-<p>Фильтр компрессии: @Html.ActionLink("Compress", "Compress")</p>
-<p>Фильтр удаления пробелов: @Html.ActionLink("Whitespace", "Whitespace")</p>
-<p>Фильтр логирования: @Html.ActionLink("Log", "Log")</p>
+        <p>Фильтр кэширования: @Html.ActionLink("Cache", "Cache")</p>
+        <p>Фильтр компрессии: @Html.ActionLink("Compress", "Compress")</p>
+        <p>Фильтр удаления пробелов: @Html.ActionLink("Whitespace", "Whitespace")</p>
+        <p>Фильтр логирования: @Html.ActionLink("Log", "Log")</p>
 
-<p>Глобальный фильтр: @Html.ActionLink("Argument", "Argument", new { arg = "notint" })</p>
+        <p>Глобальный фильтр: @Html.ActionLink("Argument", "Argument", new { arg = "notint" })</p>
 
-<h3>Глава 9. Привязка модели</h3>
+        <h3>Глава 9. Привязка модели</h3>
 
-<p>Привязка заданных полей: @Html.ActionLink("BindInclude", "BindInclude", 
-    new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })</p>
-<p>Привязка полей, кроме заданных: @Html.ActionLink("BindExclude", "BindExclude", 
-    new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })</p>
-<p>Привязка на уровне модели без заданных полей: @Html.ActionLink("BindModel", "BindModel", 
-    new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })</p>
-<p>Явная привязка: @Html.ActionLink("UpdateModel", "UpdateModel", 
-    new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 }),
-    @Html.ActionLink("TryUpdateModel", "TryUpdateModel", 
-    new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })
-</p>
+        <p>
+            Привязка заданных полей: @Html.ActionLink("BindInclude", "BindInclude",
+new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })
+        </p>
+        <p>
+            Привязка полей, кроме заданных: @Html.ActionLink("BindExclude", "BindExclude",
+new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })
+        </p>
+        <p>
+            Привязка на уровне модели без заданных полей: @Html.ActionLink("BindModel", "BindModel",
+new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })
+        </p>
+        <p>
+            Явная привязка: @Html.ActionLink("UpdateModel", "UpdateModel",
+     new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 }),
+            @Html.ActionLink("TryUpdateModel", "TryUpdateModel",
+                     new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })
+        </p>
 
-<p>Реализация поставщика значений: @Html.ActionLink("BrowserInfo", "BrowserInfo")</p>
+        <p>Реализация поставщика значений: @Html.ActionLink("BrowserInfo", "BrowserInfo")</p>
 
-<p>Привязчик модели: @Html.ActionLink("ModelBinder", "ModelBinder", 
-    new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })</p>
+        <p>
+            Привязчик модели: @Html.ActionLink("ModelBinder", "ModelBinder",
+   new { Name = "Преступление и наказание", Author = "Ф. Достоевский", Year = 1866 })
+        </p>
+    </div>
+</div>
+
+
+

@@ -8,9 +8,13 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @RenderBody()
+
+    <div class="container">
+        @RenderBody()
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
