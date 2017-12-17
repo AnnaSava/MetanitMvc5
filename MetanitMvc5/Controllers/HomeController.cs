@@ -341,5 +341,12 @@ namespace MetanitMvc5.Controllers
         {
             return View(b);
         }
+
+        public ActionResult Modules()
+        {
+            var modules = HttpContext.ApplicationInstance.Modules;
+            string[] modArray = modules.AllKeys;
+            return View(modArray);
+        }
     }
 }

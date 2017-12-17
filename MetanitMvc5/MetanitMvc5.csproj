@@ -201,6 +201,7 @@
     <Content Include="Views\Chat\Index.cshtml" />
     <Content Include="Views\Chat\ChatRoom.cshtml" />
     <Content Include="Views\Chat\History.cshtml" />
+    <Content Include="Views\Home\Modules.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
