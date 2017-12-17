@@ -114,9 +114,15 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\chat.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-1.8.0.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.0.js" />
+    <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -130,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Filters\ArgumentExceptionHandler.cs" />
     <Compile Include="Filters\CacheAttribute.cs" />
     <Compile Include="Filters\CompressAttribute.cs" />
@@ -154,6 +161,7 @@
     <Compile Include="Models\BookValidatable.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookBind.cs" />
+    <Compile Include="Models\Chat.cs" />
     <Compile Include="Models\ClearBook.cs" />
     <Compile Include="Models\BookForBinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -190,6 +198,9 @@
     <Content Include="Views\Home\BindBookModel.cshtml" />
     <Content Include="Views\Home\ModelBinder.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Chat\Index.cshtml" />
+    <Content Include="Views\Chat\ChatRoom.cshtml" />
+    <Content Include="Views\Chat\History.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
