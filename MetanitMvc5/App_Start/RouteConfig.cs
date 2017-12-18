@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetanitMvc5.Handlers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,11 +14,22 @@ namespace MetanitMvc5
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.Add("handler", new Route("handler/{*path}", new CustomRouteHandler()));
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+        }
+
+        // обработчик маршрута
+        class CustomRouteHandler : IRouteHandler
+        {
+            public IHttpHandler GetHttpHandler(RequestContext requestContext)
+            {
+                return new UserInfoHandler();
+            }
         }
     }
 }

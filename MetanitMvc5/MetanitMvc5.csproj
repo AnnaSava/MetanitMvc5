@@ -156,6 +156,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\UserInfoHandler.cs" />
     <Compile Include="Models\BookCustom.cs" />
     <Compile Include="Models\BookNotAllowed.cs" />
     <Compile Include="Models\BookValidatable.cs" />
