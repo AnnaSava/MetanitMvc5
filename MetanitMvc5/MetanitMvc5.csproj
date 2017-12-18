@@ -167,6 +167,7 @@
     <Compile Include="Models\Chat.cs" />
     <Compile Include="Models\ClearBook.cs" />
     <Compile Include="Models\BookForBinder.cs" />
+    <Compile Include="Modules\HandlerSelectionModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\BookModelBinder.cs" />
     <Compile Include="Util\BrowserValueProvider.cs" />

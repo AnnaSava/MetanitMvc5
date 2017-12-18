@@ -18,7 +18,7 @@ namespace MetanitMvc5
             //routes.Add("handler", new Route("handler/{*path}", new CustomRouteHandler()));
 
             // Маршрут с кастомным асинхронным обработчиком запроса
-            routes.Add(new Route("Log/{id}", new CustomAsyncRouteHandler()));
+            routes.Add("LogInfo", new Route("Log/{id}", new CustomAsyncRouteHandler()));
 
             routes.MapRoute(
                 name: "Default",

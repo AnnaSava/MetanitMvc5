@@ -10,11 +10,11 @@ namespace MetanitMvc5.Filters
     {
         public void OnException(ExceptionContext exceptionContext)
         {
-            if (!exceptionContext.ExceptionHandled && exceptionContext.Exception is ArgumentException)
-            {
-                exceptionContext.Result = new ViewResult() { ViewName = "ArgumentException" };
-                exceptionContext.ExceptionHandled = true;
-            }
+            //if (!exceptionContext.ExceptionHandled && exceptionContext.Exception is ArgumentException)
+            //{
+            //    exceptionContext.Result = new ViewResult() { ViewName = "ArgumentException" };
+            //    exceptionContext.ExceptionHandled = true;
+            //}
         }
     }
 }
