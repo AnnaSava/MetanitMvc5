@@ -5,6 +5,7 @@ using System.Web;
 
 namespace MetanitMvc5.Handlers
 {
+    //Почему-то перехватывает обработку любого маршрута
     public class UserInfoHandler : IHttpHandler
     {
         public void ProcessRequest(HttpContext context)

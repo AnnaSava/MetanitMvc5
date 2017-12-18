@@ -14,7 +14,11 @@ namespace MetanitMvc5
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // Маршрут с кастомным обработчиком запроса
             //routes.Add("handler", new Route("handler/{*path}", new CustomRouteHandler()));
+
+            // Маршрут с кастомным асинхронным обработчиком запроса
+            routes.Add(new Route("Log/{id}", new CustomAsyncRouteHandler()));
 
             routes.MapRoute(
                 name: "Default",
@@ -29,6 +33,15 @@ namespace MetanitMvc5
             public IHttpHandler GetHttpHandler(RequestContext requestContext)
             {
                 return new UserInfoHandler();
+            }
+        }
+
+        //асинхронный обработчик маршрута
+        class CustomAsyncRouteHandler : IRouteHandler
+        {
+            public IHttpHandler GetHttpHandler(RequestContext requestContext)
+            {
+                return new LogInfoAsyncHandler();
             }
         }
     }
