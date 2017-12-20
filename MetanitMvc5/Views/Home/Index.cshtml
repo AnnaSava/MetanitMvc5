@@ -126,3 +126,7 @@ new { Name = "Преступление и наказание", Author = "Ф. Д�
 <p>Профиль кэширования (по браузеру): @Html.ActionLink("OutputCacheProfile", "OutputCacheProfile")</p>
 
 <p>Динамическое управление кэшем: @Html.ActionLink("DynamicCache", "DynamicCache")</p>
+
+<p>Использование MemoryCache: @Html.ActionLink("Phone 1", "Index", "Phone", new { @id = 1 }, null)
+    <br /><em>Если записи в базе отсутствуют, нужно запустить инициализатор @Html.ActionLink("Phone/Init", "Init", "Phone")</em>
+    </p>
