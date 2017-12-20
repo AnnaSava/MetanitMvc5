@@ -8,11 +8,18 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace MetanitMvc5.Controllers
 {
     public class HomeController : Controller
     {
+        static int x_cached = 9;
+        static int x_cached_server = 9;
+        static int x_cached_byheader = 9;
+        static int x_cached_byparam = 9;
+        static int x_cached_bycustom = 9;
+
         public ActionResult Index()
         {
             return View();
@@ -347,6 +354,41 @@ namespace MetanitMvc5.Controllers
             var modules = HttpContext.ApplicationInstance.Modules;
             string[] modArray = modules.AllKeys;
             return View(modArray);
+        }       
+
+        [OutputCache(Duration = 30, Location = OutputCacheLocation.Downstream)]
+        public string OutputCache()
+        {
+            x_cached++;
+            return x_cached.ToString();
+        }
+
+        [OutputCache(Duration = 30, Location = OutputCacheLocation.Server)]
+        public string OutputCacheServer()
+        {
+            x_cached_server++;
+            return x_cached_server.ToString();
+        }
+
+        [OutputCache(Duration = 30, Location = OutputCacheLocation.Any, VaryByHeader = "user-agent")]
+        public string OutputCacheByHeader()
+        {
+            x_cached_byheader++;
+            return x_cached_byheader.ToString();
+        }
+
+        [OutputCache(Duration = 30, Location = OutputCacheLocation.Any, VaryByParam = "title;id")]
+        public string OutputCacheByParam(string title, int? id)
+        {
+            x_cached_byparam++;
+            return x_cached_byparam.ToString();
+        }
+
+        [OutputCache(Duration = 30, Location = OutputCacheLocation.Any, VaryByCustom = "browser")]
+        public string OutputCacheByCustom(string title, int? id)
+        {
+            x_cached_bycustom++;
+            return x_cached_bycustom.ToString();
         }
     }
 }

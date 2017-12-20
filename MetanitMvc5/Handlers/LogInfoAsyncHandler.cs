@@ -8,6 +8,7 @@ using System.Data.Entity;
 
 namespace MetanitMvc5.Handlers
 {
+    // Баг или фича: перехватывает обработку любого маршрутов, содержащих id
     public class LogInfoAsyncHandler : HttpTaskAsyncHandler
     {
         public override async Task ProcessRequestAsync(HttpContext context)

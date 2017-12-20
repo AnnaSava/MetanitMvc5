@@ -28,5 +28,17 @@ namespace MetanitMvc5
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
         }
+
+        public override string GetVaryByCustomString(HttpContext context, string custom)
+        {
+            if (custom == "browser")
+            {
+                return context.Request.Browser.Browser;
+            }
+            else
+            {
+                return base.GetVaryByCustomString(context, custom);
+            }
+        }
     }
 }
