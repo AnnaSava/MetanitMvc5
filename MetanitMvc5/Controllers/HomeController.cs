@@ -19,6 +19,8 @@ namespace MetanitMvc5.Controllers
         static int x_cached_byheader = 9;
         static int x_cached_byparam = 9;
         static int x_cached_bycustom = 9;
+        static int x_cached_profile = 9;
+        static int x_cached_dynamic = 9;
 
         public ActionResult Index()
         {
@@ -389,6 +391,22 @@ namespace MetanitMvc5.Controllers
         {
             x_cached_bycustom++;
             return x_cached_bycustom.ToString();
+        }
+
+        [OutputCache(CacheProfile = "cacheProfile1")]
+        public string OutputCacheProfile(string title, int? id)
+        {
+            x_cached_profile++;
+            return x_cached_profile.ToString();
+        }
+
+        public string DynamicCache()
+        {
+            Response.Cache.SetExpires(DateTime.Now.AddSeconds(30));
+            Response.Cache.SetCacheability(HttpCacheability.Server);
+
+            x_cached_dynamic++;
+            return x_cached_dynamic.ToString();
         }
     }
 }
